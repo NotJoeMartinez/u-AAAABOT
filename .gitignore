@@ -1,0 +1,9 @@
+env 
+env/
+config.py
+notes.md
+log.txt
+.DS_store
+__pycache__
+test.py
+.vscode 
