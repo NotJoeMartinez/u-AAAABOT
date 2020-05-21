@@ -7,3 +7,5 @@ log.txt
 __pycache__
 test.py
 .vscode 
+tests
+tests/
