@@ -24,15 +24,14 @@ def run_bot():
         try: 
             for item in reddit.inbox.unread(limit=None):
             # replies to inbox mention with the output of randomAString() 
-                # item.reply(randomAString())
-                print("replied to {} comment".format(str(item)) )
-                print(item.parent().permalink)
-                #print(dir(item))
+                item.reply(randomAString())
+                item.mark_read()
+                print("replied to comment {} ".format(str(item)))
                 # This opens a file a write the url to the metion in it's inbox, along with the datetime 
                 with open("log.txt","a") as file:
                     file.write("\n" + str(item) + ' ' +  'https://www.reddit.com'+ item.parent().permalink + str(item) + ' ' + str(now))
 
-               # item.mark_read()
+               
         # Catches rate limit 
         except praw.exceptions.RedditAPIException as e: 
             print(e)
